@@ -1,0 +1,22 @@
+{
+  "name": "dscheigs-skills-marketplace",
+  "owner": {
+    "name": "Daniel Scheigert",
+    "email": "daniel.scheigert@gmail.com"
+  },
+  "metadata": {
+    "description": "A curated collection of Claude Code skills for personal development use",
+    "version": "1.0.0"
+  },
+  "plugins": [
+    {
+      "name": "example-skills",
+      "description": "Example skills demonstrating the marketplace structure",
+      "source": "./",
+      "strict": false,
+      "skills": [
+        "./plugins/examples"
+      ]
+    }
+  ]
+}
