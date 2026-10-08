@@ -21,12 +21,16 @@ Or if using the full URL:
 Once the marketplace is added, you can install individual skills:
 
 ```bash
-/plugin install example-skills@claude-skills-marketplace
+/plugin install dev-skills@dscheigs-skills-marketplace
 ```
 
 ## Available Skills
 
-Browse the `plugins/` directory to see all available skills. Each skill is organized in its own directory with a `SKILL.md` file containing the skill definition.
+Browse the `plugins/` directory. Each skill has its own directory with a `SKILL.md`.
+
+| Skill | What it does |
+| :-- | :-- |
+| `/pr` | Opens a pull request for the current branch with a clear title and description. Runs on Sonnet, and never merges. |
 
 ## Contributing Skills
 
@@ -67,7 +71,7 @@ Browse the `plugins/` directory to see all available skills. Each skill is organ
    ```bash
    claude plugin validate .
    /plugin marketplace add ./
-   /plugin install your-skill-collection@claude-skills-marketplace
+   /plugin install your-skill-collection@dscheigs-skills-marketplace
    ```
 
 ### Skill Structure
@@ -87,7 +91,7 @@ claude-skills/
 ├── .claude-plugin/
 │   └── marketplace.json    # Marketplace configuration
 └── plugins/
-    └── examples/           # Example skills
+    └── pr/
         └── SKILL.md
 ```
 

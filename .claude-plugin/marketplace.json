@@ -10,12 +10,12 @@
   },
   "plugins": [
     {
-      "name": "example-skills",
-      "description": "Example skills demonstrating the marketplace structure",
+      "name": "dev-skills",
+      "description": "Small development workflow skills",
       "source": "./",
       "strict": false,
       "skills": [
-        "./plugins/examples"
+        "./plugins/pr"
       ]
     }
   ]
