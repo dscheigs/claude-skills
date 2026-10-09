@@ -10,13 +10,9 @@
   },
   "plugins": [
     {
-      "name": "pr-skill",
-      "description": "Open a pull request for the current work without merging it",
-      "source": "./",
-      "strict": false,
-      "skills": [
-        "./plugins/pr"
-      ]
+      "name": "dev",
+      "description": "Development workflow skills: open pull requests, review pull requests",
+      "source": "./plugins/dev"
     }
   ]
 }
