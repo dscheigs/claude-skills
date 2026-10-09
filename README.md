@@ -31,7 +31,7 @@ Browse the `plugins/` directory to see all available plugins. Each plugin holds 
 | Skill    | Plugin | What it does                                                                           | Model          |
 | -------- | ------ | -------------------------------------------------------------------------------------- | -------------- |
 | `plan`   | `dev`  | Plans an epic-sized project and breaks it into issues, without writing code            | Runs on Opus   |
-| `dev`    | `dev`  | Does the work for one issue in a per-issue worktree and opens a PR with `pr`, but never merges | Runs on Sonnet |
+| `dev`    | `dev`  | Sweeps closed-issue worktrees, does one issue's work in a per-issue worktree, and opens a PR with `pr`, but never merges | Runs on Sonnet |
 | `pr`     | `dev`  | Opens a pull request and bumps the version from Conventional Commits, but never merges | Runs on Sonnet |
 | `review` | `dev`  | Reviews a GitHub PR given a number or URL and reports findings without commenting      | Runs on Opus   |
 | `worktree-cleanup` | `dev` | Removes worktrees whose issue is closed, skipping any with uncommitted changes   | Runs on Sonnet |
