@@ -31,11 +31,12 @@ Browse the `plugins/` directory to see all available plugins. Each plugin holds 
 | Skill    | Plugin | What it does                                                                           | Model          |
 | -------- | ------ | -------------------------------------------------------------------------------------- | -------------- |
 | `plan`   | `dev`  | Plans an epic-sized project and breaks it into issues, without writing code            | Runs on Opus   |
-| `dev`    | `dev`  | Does the work for one issue and opens a PR with `pr`, but never merges                 | Runs on Sonnet |
+| `dev`    | `dev`  | Does the work for one issue in a per-issue worktree and opens a PR with `pr`, but never merges | Runs on Sonnet |
 | `pr`     | `dev`  | Opens a pull request and bumps the version from Conventional Commits, but never merges | Runs on Sonnet |
 | `review` | `dev`  | Reviews a GitHub PR given a number or URL and reports findings without commenting      | Runs on Opus   |
+| `worktree-cleanup` | `dev` | Removes worktrees whose issue is closed, skipping any with uncommitted changes   | Runs on Sonnet |
 
-Skills in this plugin are invoked as `/dev:plan`, `/dev:dev`, `/dev:pr` and `/dev:review`. Nothing in the plugin merges a PR; merging is always left to the user.
+Skills in this plugin are invoked as `/dev:plan`, `/dev:dev`, `/dev:pr`, `/dev:review` and `/dev:worktree-cleanup`. Nothing in the plugin merges a PR; merging is always left to the user.
 
 ## Contributing Skills
 
@@ -106,7 +107,9 @@ claude-skills/
             │   └── SKILL.md
             ├── pr/         # Open a PR, never merge
             │   └── SKILL.md
-            └── review/     # Review a PR by number or URL
+            ├── review/     # Review a PR by number or URL
+            │   └── SKILL.md
+            └── worktree-cleanup/  # Remove worktrees for closed issues
                 └── SKILL.md
 ```
 
