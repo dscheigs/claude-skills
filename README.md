@@ -30,8 +30,12 @@ Browse the `plugins/` directory to see all available plugins. Each plugin holds 
 
 | Skill    | Plugin | What it does                                                                           | Model          |
 | -------- | ------ | -------------------------------------------------------------------------------------- | -------------- |
+| `plan`   | `dev`  | Plans an epic-sized project and breaks it into issues, without writing code            | Runs on Opus   |
+| `dev`    | `dev`  | Does the work for one issue and opens a PR with `pr`, but never merges                 | Runs on Sonnet |
 | `pr`     | `dev`  | Opens a pull request and bumps the version from Conventional Commits, but never merges | Runs on Sonnet |
 | `review` | `dev`  | Reviews a GitHub PR given a number or URL and reports findings without commenting      | Runs on Opus   |
+
+Skills in this plugin are invoked as `/dev:plan`, `/dev:dev`, `/dev:pr` and `/dev:review`. Nothing in the plugin merges a PR; merging is always left to the user.
 
 ## Contributing Skills
 
@@ -96,6 +100,10 @@ claude-skills/
         ├── .claude-plugin/
         │   └── plugin.json
         └── skills/
+            ├── dev/        # Do an issue's work, open a PR
+            │   └── SKILL.md
+            ├── plan/       # Plan an epic-sized project
+            │   └── SKILL.md
             ├── pr/         # Open a PR, never merge
             │   └── SKILL.md
             └── review/     # Review a PR by number or URL
