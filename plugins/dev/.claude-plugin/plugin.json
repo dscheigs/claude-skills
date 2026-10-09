@@ -1,6 +1,6 @@
 {
   "name": "dev",
-  "description": "Development workflow skills: plan large projects, do issue work, open and review pull requests, clean up worktrees",
+  "description": "Development workflow skills: plan large projects, create issues, do issue work, open and review pull requests, clean up worktrees",
   "author": {
     "name": "Daniel Scheigert"
   }

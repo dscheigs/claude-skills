@@ -30,13 +30,14 @@ Browse the `plugins/` directory to see all available plugins. Each plugin holds 
 
 | Skill    | Plugin | What it does                                                                           | Model          |
 | -------- | ------ | -------------------------------------------------------------------------------------- | -------------- |
-| `plan`   | `dev`  | Plans an epic-sized project and breaks it into issues, without writing code            | Runs on Opus   |
+| `plan`   | `dev`  | Plans an epic-sized project and, once approved, files it as issues with `create-issue`, without writing code | Runs on Opus   |
+| `create-issue` | `dev` | Creates one GitHub issue scoped for `dev` to execute; used by `plan` and on request | Runs on Sonnet |
 | `dev`    | `dev`  | Sweeps closed-issue worktrees, does one issue's work in a per-issue worktree, and opens a PR with `pr`, but never merges | Runs on Sonnet |
 | `pr`     | `dev`  | Opens a pull request and bumps the version from Conventional Commits, but never merges | Runs on Sonnet |
 | `review` | `dev`  | Reviews a GitHub PR given a number or URL and reports findings without commenting      | Runs on Opus   |
 | `worktree-cleanup` | `dev` | Removes worktrees whose issue is closed, skipping any with uncommitted changes   | Runs on Sonnet |
 
-Skills in this plugin are invoked as `/dev:plan`, `/dev:dev`, `/dev:pr`, `/dev:review` and `/dev:worktree-cleanup`. Nothing in the plugin merges a PR; merging is always left to the user.
+Skills in this plugin are invoked as `/dev:plan`, `/dev:create-issue`, `/dev:dev`, `/dev:pr`, `/dev:review` and `/dev:worktree-cleanup`. Nothing in the plugin merges a PR; merging is always left to the user.
 
 ## Contributing Skills
 
@@ -101,6 +102,8 @@ claude-skills/
         ├── .claude-plugin/
         │   └── plugin.json
         └── skills/
+            ├── create-issue/  # File an issue for dev to execute
+            │   └── SKILL.md
             ├── dev/        # Do an issue's work, open a PR
             │   └── SKILL.md
             ├── plan/       # Plan an epic-sized project
