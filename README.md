@@ -32,7 +32,7 @@ Browse the `plugins/` directory to see all available skills. Each skill is organ
 | Skill      | Plugin           | What it does                                                          | Model         |
 | ---------- | ---------------- | --------------------------------------------------------------------- | ------------- |
 | `examples` | `example-skills` | Demonstrates the marketplace structure                                | Current model |
-| `pr`       | `pr-skill`       | Pushes a branch and opens a pull request, but never merges it         | Runs on Sonnet |
+| `pr`       | `pr-skill`       | Opens a pull request and bumps the version from Conventional Commits, but never merges | Runs on Sonnet |
 
 ## Contributing Skills
 
