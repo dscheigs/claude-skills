@@ -22,11 +22,17 @@ Once the marketplace is added, you can install individual skills:
 
 ```bash
 /plugin install example-skills@claude-skills-marketplace
+/plugin install pr-skill@claude-skills-marketplace
 ```
 
 ## Available Skills
 
 Browse the `plugins/` directory to see all available skills. Each skill is organized in its own directory with a `SKILL.md` file containing the skill definition.
+
+| Skill      | Plugin           | What it does                                                          | Model         |
+| ---------- | ---------------- | --------------------------------------------------------------------- | ------------- |
+| `examples` | `example-skills` | Demonstrates the marketplace structure                                | Current model |
+| `pr`       | `pr-skill`       | Pushes a branch and opens a pull request, but never merges it         | Runs on Sonnet |
 
 ## Contributing Skills
 
@@ -87,7 +93,9 @@ claude-skills/
 ├── .claude-plugin/
 │   └── marketplace.json    # Marketplace configuration
 └── plugins/
-    └── examples/           # Example skills
+    ├── examples/           # Example skills
+    │   └── SKILL.md
+    └── pr/                 # Open a PR, never merge
         └── SKILL.md
 ```
 
