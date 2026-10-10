@@ -36,8 +36,9 @@ Browse the `plugins/` directory to see all available plugins. Each plugin holds 
 | `pr`     | `dev`  | Opens a pull request and bumps the version from Conventional Commits, but never merges | Runs on Sonnet |
 | `review` | `dev`  | Reviews a GitHub PR given a number or URL and reports findings without commenting      | Runs on Opus   |
 | `worktree-cleanup` | `dev` | Removes worktrees whose issue is closed, skipping any with uncommitted changes   | Runs on Sonnet |
+| `security-audit` | `dev` | Audits a repo or path for security issues and reports findings, read-only and without touching live systems | Runs on Opus 5.5 |
 
-Skills in this plugin are invoked as `/dev:plan`, `/dev:create-issue`, `/dev:dev`, `/dev:pr`, `/dev:review` and `/dev:worktree-cleanup`. Nothing in the plugin merges a PR; merging is always left to the user.
+Skills in this plugin are invoked as `/dev:plan`, `/dev:create-issue`, `/dev:dev`, `/dev:pr`, `/dev:review`, `/dev:worktree-cleanup` and `/dev:security-audit`. Nothing in the plugin merges a PR; merging is always left to the user.
 
 ## Contributing Skills
 
@@ -111,6 +112,8 @@ claude-skills/
             ├── pr/         # Open a PR, never merge
             │   └── SKILL.md
             ├── review/     # Review a PR by number or URL
+            │   └── SKILL.md
+            ├── security-audit/  # Audit a repo or path for security issues
             │   └── SKILL.md
             └── worktree-cleanup/  # Remove worktrees for closed issues
                 └── SKILL.md
